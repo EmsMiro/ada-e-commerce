@@ -53,7 +53,7 @@ const AccountForm: React.FC = () => {
         if (response.ok) {
           const json = await response.json()
           setUser(json.doc)
-          setSuccess('Successfully updated account.')
+          setSuccess('Conta atualizada com sucesso.')
           setError('')
           setChangePassword(false)
           reset({
@@ -63,7 +63,7 @@ const AccountForm: React.FC = () => {
             passwordConfirm: '',
           })
         } else {
-          setError('There was a problem updating your account.')
+          setError('Houve um problema ao atualizar sua conta.')
         }
       }
     },
@@ -74,7 +74,7 @@ const AccountForm: React.FC = () => {
     if (user === null) {
       router.push(
         `/login?error=${encodeURIComponent(
-          'You must be logged in to view this page.',
+          'Você precisa estar conectado para visualizar esta página.',
         )}&redirect=${encodeURIComponent('/account')}`,
       )
     }
@@ -96,19 +96,19 @@ const AccountForm: React.FC = () => {
       {!changePassword ? (
         <Fragment>
           <p>
-            {'Change your account details below, or '}
+            {'Altere os detalhes de sua conta abaixo ou '}
             <button
               type="button"
               className={classes.changePassword}
               onClick={() => setChangePassword(!changePassword)}
             >
-              click here
+              clique aqui
             </button>
-            {' to change your password.'}
+            {' para alterar sua senha'}
           </p>
           <Input
             name="email"
-            label="Email Address"
+            label="Email"
             required
             register={register}
             error={errors.email}
@@ -119,20 +119,20 @@ const AccountForm: React.FC = () => {
       ) : (
         <Fragment>
           <p>
-            {'Change your password below, or '}
+            {'Altere sua senha abaixo, ou '}
             <button
               type="button"
               className={classes.changePassword}
               onClick={() => setChangePassword(!changePassword)}
             >
-              cancel
+              cancelar
             </button>
             .
           </p>
           <Input
             name="password"
             type="password"
-            label="Password"
+            label="Senha"
             required
             register={register}
             error={errors.password}
@@ -140,7 +140,7 @@ const AccountForm: React.FC = () => {
           <Input
             name="passwordConfirm"
             type="password"
-            label="Confirm Password"
+            label="Confirmar Senha"
             required
             register={register}
             validate={value => value === password.current || 'The passwords do not match'}

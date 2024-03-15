@@ -16,7 +16,7 @@ import classes from './index.module.scss'
 export default async function Account() {
   const { user } = await getMeUser({
     nullUserRedirect: `/login?error=${encodeURIComponent(
-      'You must be logged in to access your account.',
+      'Você precisa realizar o login para acessar sua conta.',
     )}&redirect=${encodeURIComponent('/account')}`,
   })
 
