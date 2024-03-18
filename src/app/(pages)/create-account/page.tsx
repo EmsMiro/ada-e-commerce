@@ -50,7 +50,7 @@ export default async function CreateAccount() {
 }
 
 export const metadata: Metadata = {
-  title: 'Account',
+  title: 'Criar conta',
   description: 'Crie uma conta ou faça login em sua conta existente.',
   openGraph: mergeOpenGraph({
     title: 'Account',

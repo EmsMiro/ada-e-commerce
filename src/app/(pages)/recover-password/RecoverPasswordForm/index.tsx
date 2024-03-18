@@ -41,7 +41,7 @@ export const RecoverPasswordForm: React.FC = () => {
       setError('')
     } else {
       setError(
-        'There was a problem while attempting to send you a password reset email. Please try again.',
+        'Houve um problema ao tentar enviar-lhe um e-mail de redefinição de senha. Tente novamente.',
       )
     }
   }, [])
@@ -50,19 +50,12 @@ export const RecoverPasswordForm: React.FC = () => {
     <Fragment>
       {!success && (
         <React.Fragment>
-          <h1>Recover Password</h1>
-          <div className={classes.formWrapper}>
-            <p>
-              {`Please enter your email below. You will receive an email message with instructions on
-              how to reset your password. To manage your all users, `}
-              <Link href="/admin/collections/users">login to the admin dashboard</Link>
-              {'.'}
-            </p>
+          <p>Insira o email registrado no cadastro. Será enviado para ele um código para recuperar sua senha</p>        
             <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
               <Message error={error} className={classes.message} />
               <Input
                 name="email"
-                label="Email Address"
+                label="Email"
                 required
                 register={register}
                 error={errors.email}
@@ -71,17 +64,16 @@ export const RecoverPasswordForm: React.FC = () => {
               <Button
                 type="submit"
                 appearance="primary"
-                label="Recover Password"
+                label="Recuperar Senha"
                 className={classes.submit}
               />
-            </form>
-          </div>
+            </form>         
         </React.Fragment>
       )}
       {success && (
         <React.Fragment>
-          <h1>Request submitted</h1>
-          <p>Check your email for a link that will allow you to securely reset your password.</p>
+          <h1>Solicitação enviada</h1>
+          <p>Verifique se há um link em seu e-mail que lhe permitirá redefinir sua senha com segurança.</p>
         </React.Fragment>
       )}
     </Fragment>
