@@ -65,7 +65,7 @@ export const home: Partial<Page> = {
             relationTo: 'pages',
             value: '{{PRODUCTS_PAGE_ID}}',
           },
-          label: 'Shop now',
+          label: 'Comprar agora',
           url: '',
         },
       },
@@ -460,7 +460,7 @@ export const home: Partial<Page> = {
         {
           children: [
             {
-              text: 'Shop now',
+              text: 'Comprar agora',
             },
           ],
           type: 'h4',
@@ -491,7 +491,7 @@ export const home: Partial<Page> = {
           link: {
             type: 'reference',
             url: '',
-            label: 'Shop now',
+            label: 'Comprar agora',
             appearance: 'primary',
             reference: {
               value: '{{PRODUCTS_PAGE_ID}}',
